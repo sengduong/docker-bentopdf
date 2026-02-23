@@ -1,0 +1,14 @@
+services:
+  bentopdf:
+    image: ghcr.io/alam00000/bentopdf:latest # Recommended
+    # image: bentopdfteam/bentopdf:latest     # Alternative: Docker Hub
+    container_name: bentopdf
+    #ports:
+    #  - '3000:8080'
+    restart: unless-stopped
+    networks:
+      - caddy-201_caddy_net
+      
+networks:
+  caddy-201_caddy_net:
+    external: true
